@@ -28,7 +28,7 @@ st.write(“Hello World!”)
 
 Read more: https://streamlit.io/
 
-# 3. Deploy with Git & Heroku
+# 3.a. Deploy with Git & Heroku
 
 Learn the basics about source control with Git: https://git-scm.com/
 
@@ -43,3 +43,7 @@ https://github.com/slevin48/streamlit
 
 
 Additional tutorial: https://github.com/slevin48/streamlit
+
+# 3.b. Deploy with GitHub & Streamlit Cloud
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/slevin48/training/main/app.py)
