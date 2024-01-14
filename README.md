@@ -11,12 +11,12 @@ Agenda of [Python 101](doc/Python%20101.pptx):
 
 | Chapter | | resources |
 |---------|-|-----------|
-|Datatypes|![](doc/datatypes.jpg) | https://realpython.com/python-data-types/ |
-|Loops & Conditions | ![](doc/loops.jpg)|https://realpython.com/python-for-loop/|
-|Functions | ![](doc/functions.jpg)|https://realpython.com/defining-your-own-python-function/ |
-|Modules|![](doc/modules.jpg)|https://realpython.com/python-modules-packages/ |
-|VScode|![](doc/vscode.jpg)|https://realpython.com/python-development-visual-studio-code/ |
-|Files management|![](doc/files.jpg)|https://realpython.com/working-with-files-in-python/ |
+|Datatypes|![](img/datatypes.jpg) | https://realpython.com/python-data-types/ |
+|Loops & Conditions | ![](img/loops.jpg)|https://realpython.com/python-for-loop/|
+|Functions | ![](img/functions.jpg)|https://realpython.com/defining-your-own-python-function/ |
+|Modules|![](img/modules.jpg)|https://realpython.com/python-modules-packages/ |
+|VScode|![](img/vscode.jpg)|https://realpython.com/python-development-visual-studio-code/ |
+|Files management|![](img/files.jpg)|https://realpython.com/working-with-files-in-python/ |
 
 **Hands on + exercise!!!**
 
@@ -44,7 +44,7 @@ import streamlit as st
 st.write(“Hello World!”)
 ```
 
-![app](doc/app.png)
+![app](img/app.png)
 
 Read more: https://streamlit.io/
 
