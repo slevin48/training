@@ -31,7 +31,7 @@ Open Terminal, and run python:
 * [Pandas 101](doc/Pandas%20101.pptx)
 * [Scikit-Learn 101](doc/Sklearn%20101.pptx)
 
-**Develop your first web app with Streamlit**
+# 3. Develop web apps with Streamlit
 
 Install via PIP (package manager for Python): `$ pip install streamlit`
 
@@ -48,10 +48,7 @@ st.write(“Hello World!”)
 
 Read more: https://streamlit.io/
 
-# 3.a. Deploy with Git & Heroku
-
-Learn the basics about source control with Git: https://git-scm.com/
-
+**Deploy with Heroku**
 
 Heroku tutorial: https://devcenter.heroku.com/articles/getting-started-with-python
 https://github.com/slevin48/streamlit
@@ -61,9 +58,12 @@ https://github.com/slevin48/streamlit
 2.	[Procfile](code/Procfile)
 3.	[requirements.txt](code/requirements.txt)
 
-
-Additional tutorial: https://github.com/slevin48/streamlit
-
-# 3.b. Deploy with GitHub & Streamlit Cloud
+**Deploy with Streamlit Cloud**
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/slevin48/training/main/app.py)
+
+# 4. Version your code with Git & GitHub
+Learn the basics about source control with Git: 
+- https://git-scm.com/
+- https://realpython.com/advanced-git-for-pythonistas/
+
