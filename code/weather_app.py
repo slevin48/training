@@ -2,14 +2,29 @@ import streamlit as st
 import datetime
 from streamlit_folium import st_folium
 import folium
+from urllib.request import urlopen
+import json
+
+def fetch_weather():
+    # Fetch the sample URL
+    base_url = "https://samples.openweathermap.org/"
+    res = urlopen(base_url).read()
+    json_data = json.loads(res)
+    sample_url = json_data["products"]["current_weather"]["samples"][0]
+
+    # Fetch weather data
+    res = urlopen(sample_url).read()
+    return json.loads(res)
 
 def display_weather(data):
     st.title(f"Weather in {data['name']}, {data['sys']['country']}")
 
     # Map
     m = folium.Map(location=[data['coord']['lat'], data['coord']['lon']], zoom_start=10)
-    folium.Marker([data['coord']['lat'], data['coord']['lon']], 
-                  popup=f"{data['name']}").add_to(m)
+    folium.Marker(
+        [data['coord']['lat'], data['coord']['lon']],
+        popup=folium.Popup(f"<b>City:</b> {data['name']}<br><b>Condition:</b> {data['weather'][0]['description'].capitalize()}<br><b>Temperature:</b> {data['main']['temp'] - 273.15:.2f} °C", max_width=250)
+    ).add_to(m)
     st_folium(m, width=700, height=500)
 
     # Sidebar
@@ -45,49 +60,6 @@ def display_weather(data):
         st.write(f"**Sunrise**: {sunrise.strftime('%H:%M:%S')} UTC")
         st.write(f"**Sunset**: {sunset.strftime('%H:%M:%S')} UTC")
 
-# Sample data from OpenWeatherMap API
-data = {
-    "coord": {
-        "lon": -0.13,
-        "lat": 51.51
-    },
-    "weather": [
-        {
-            "id": 300,
-            "main": "Drizzle",
-            "description": "light intensity drizzle",
-            "icon": "09d"
-        }
-    ],
-    "base": "stations",
-    "main": {
-        "temp": 280.32,
-        "pressure": 1012,
-        "humidity": 81,
-        "temp_min": 279.15,
-        "temp_max": 281.15
-    },
-    "visibility": 10000,
-    "wind": {
-        "speed": 4.1,
-        "deg": 80
-    },
-    "clouds": {
-        "all": 90
-    },
-    "dt": 1485789600,
-    "sys": {
-        "type": 1,
-        "id": 5091,
-        "message": 0.0103,
-        "country": "GB",
-        "sunrise": 1485762037,
-        "sunset": 1485794875
-    },
-    "id": 2643743,
-    "name": "London",
-    "cod": 200
-}
-
-# Display the weather data
+# Fetch and display the weather data
+data = fetch_weather()
 display_weather(data)
