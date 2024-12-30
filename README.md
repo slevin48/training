@@ -1,11 +1,12 @@
 # Python Training
-Learn Python, Numpy, Pandas, Scikit-Learn & Streamlit 
+
+Learn Python for Data Analysis 
+
+Why Python: Number 1 language according to [TIOBE index](https://www.tiobe.com/tiobe-index/) 
 
 
 # 1. Get started with programming in Python
 Download Python: https://www.python.org/ 
-
-Why Python: Number 1 language according to [TIOBE index](https://www.tiobe.com/tiobe-index/) 
 
 Agenda of [Python 101](doc/Python%20101.pptx):
 
@@ -29,7 +30,11 @@ Open Terminal, and run python:
 
 * [Numpy 101](doc/Numpy%20101.pptx)
 * [Pandas 101](doc/Pandas%20101.pptx)
+* [Automate Excel 101](doc/Automate%20Excel%20101.pptx)
+
+Going further with Machine Learning:
 * [Scikit-Learn 101](doc/Sklearn%20101.pptx)
+* [Deep Learning 101](doc/Deep%20Learning%20101.pptx)
 
 # 3. Develop web apps with Streamlit
 
@@ -41,29 +46,32 @@ Or if you cannot find pip:
 Develop your first [app.py](code/app.py):
 ```python
 import streamlit as st
-st.write(“Hello World!”)
+import pandas as pd
+
+st.write("# My Dashboard")
+
+df = pd.read_excel('data/data.xlsx')
+
+st.sidebar.write("## Data from Excel")
+st.sidebar.write(df)
+
+st.bar_chart(df)
 ```
 
 ![app](img/app.png)
 
 Read more: https://streamlit.io/
 
-**Deploy with Heroku**
-
-Heroku tutorial: https://devcenter.heroku.com/articles/getting-started-with-python
-https://github.com/slevin48/streamlit
-
-**Required files:**
-1.	[setup.sh](code/setup.sh)
-2.	[Procfile](code/Procfile)
-3.	[requirements.txt](code/requirements.txt)
-
 **Deploy with Streamlit Cloud**
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/slevin48/training/main/app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://python101.streamlit.app/)
 
 # 4. Version your code with Git & GitHub
+
 Learn the basics about source control with Git: 
+* [GIT 101](doc/GIT%20101.pptx)
+
+More resources:
 - https://git-scm.com/
 - https://realpython.com/advanced-git-for-pythonistas/
 
