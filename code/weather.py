@@ -3,6 +3,10 @@ import json
 
 # def get_current_weather():
 url = "https://samples.openweathermap.org/"
-res = urlopen(url)
-json_data = json.loads(res.read())
-print(json_data["products"]["current_weather"]["samples"][0])
+samples = urlopen(url).read()
+jason = json.loads(samples)
+sample_url = jason["products"]["current_weather"]["samples"][0]
+
+res = urlopen(sample_url).read()
+json_data = json.loads(res)
+print(json_data)
